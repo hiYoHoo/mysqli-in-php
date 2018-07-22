@@ -62,6 +62,10 @@ fetchRes($res, 'tables in test');
 $res = query($mysqli, 'desc users;');
 fetchRes($res, 'users');
 
+// 清空表内容
+$res = query($mysqli, 'truncate table users');
+echo '清空表users'.($res?'成功':'失败').'<br>';
+
 // 插入数据
 $sql = <<<EOF
     insert users(name, gender, age) values
